@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Pharmacy = require ('../models/pharmacies.js')
+const pharmacyData = require('../models/seed.');
 
 
 
@@ -25,6 +26,13 @@ router.get('/pharmacy/new', (req, res) => {
     res.render("new.ejs")
 })
 
+router.get('/seed', (req, res) =>{
+	pharmacy.create([
+	
+	], (err, data) => {
+		res.redirect('/pharmacy')
+	})
+})
 
 //delete
 router.delete("/pharmacy/id", (req, res) => {
