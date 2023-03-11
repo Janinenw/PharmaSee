@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,5 +8,23 @@
 </head>
 <body>
     <h1>Pharmacy! You did it! index.ejs</h1>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pharmacies List</title>
+</head>
+<body>
+	<h1>Pharmacies List</h1>
+	<ul>
+		<% pharmacys.forEach((pharmacy) => { %>
+			<li>
+				<a href="/pharmacy/<%= pharmacy._id %>"><%= pharmacy.name %></a>
+			</li>
+		<% }); %>
+	</ul>
 </body>
 </html>

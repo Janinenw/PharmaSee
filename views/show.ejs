@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Show Page</title>
-    </head>
-    <body>
-        <h1>pharmacy</h1>
-            <a href="/pharmacy">Return to Home Page</a>
-        </nav>
-    </body>
+<head>
+	<title><%= pharmacy.name %></title>
+</head>
+<body>
+	<h1><%= pharmacy.name %></h1>
+	<ul>
+		<li><strong>Address:</strong> <%= pharmacy.address %></li>
+		<li><strong>Town:</strong> <%= pharmacy.town %></li>
+		<li><strong>Phone Number:</strong> <%= pharmacy.phoneNumber %></li>
+		<li><strong>In Stock:</strong> <%= pharmacy.inStock ? 'Yes' : 'No' %></li>
+		<li><strong>Last Updated:</strong> <%= pharmacy.dateUpdated || 'N/A' %></li>
+	</ul>
+	<a href="/pharmacies">Back to List</a>
+</body>
 </html>

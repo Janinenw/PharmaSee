@@ -90,6 +90,8 @@ router.get('/new', (req, res) => {
 //     });
 // });
 
+
+//show
 router.get('/:id', (req, res) => {
 	Pharmacy.findById(req.params.id, (err, foundPharmacys) => {
 		if(err)
