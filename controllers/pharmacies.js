@@ -67,32 +67,75 @@ router.get('/new', (req, res) => {
 //     });
 // });
 
+
+
+
+//delete
+
+router.delete('/:id', (req, res) => {
+    {
+        Pharmacy.findByIdAndDelete(req.params.id, (err, deletedPharmacy) => {
+            if (err) { console.log(err.message) }
+            else {
+                console.log(deletedPharmacy)
+                res.redirect("/pharmacy")
+            }
+        })
+    }
+})
+
+//update
+
+router.put('/:id', (req, res) => {
+	Pharmacy.findByIdAndUpdate(req.params.id, req.body.pharmacy, (err, updatedPharmacy) => {
+	  if (err) {
+		console.log(err);
+		res.redirect('/pharmacy');
+	  } else {
+		res.redirect('/pharmacy/' + req.params.id);
+	  }
+	});
+  });
+  
+
+  //create 
+
+
+
+router.post('/', (req, res) => {
+	const { name, address, phone } = req.body;
+	const newPharmacy = new Pharmacy({
+	  name,
+	  address,
+	  phone
+	});
+  
+	// Save the new pharmacy to the database
+	newPharmacy.save((err, savedPharmacy) => {
+	  if (err) {
+		console.log(err.message);
+		res.redirect('/pharmacy/new');
+	  } else {
+		console.log(savedPharmacy);
+		res.redirect('/pharmacy');
+	  }
+	});
+  });
+  
+//edit
+router.get('/:id/edit', (req, res) => {
+	Pharmacy.findById(req.params.id, (err, foundPharmacys) => {
+	  if (err) {
+		console.log(err);
+		res.redirect('/pharmacy');
+	  } else {
+		res.render('edit.ejs', { pharmacy: foundPharmacys });
+	  }
+	});
+  });
+
 //show
-
-
-// router.get("/:id", (req, res) => {
-//     const id = req.params.id;
-//     if (!mongoose.Types.ObjectId.isValid(id)) {
-//         res.status(400).send("Invalid ID");
-//         return;
-//     }
-//     Pharmacy.findById(id, (err, foundPharmacy) => {
-//         if (err) {
-//             console.log(err.message);
-//             res.status(500).send("Error finding pharmacy");
-//         } else if (!foundPharmacy) {
-//             res.status(404).send("Pharmacy not found");
-//         } else {
-//             res.render("show.ejs", {
-//                 pharmacy: foundPharmacy
-//             });
-//         }
-//     });
-// });
-
-
-//show
-router.get('/:id', (req, res) => {
+  router.get('/:id', (req, res) => {
 	Pharmacy.findById(req.params.id, (err, foundPharmacys) => {
 		if(err)
 		{console.log(err.message)}
@@ -102,28 +145,6 @@ router.get('/:id', (req, res) => {
 	})
 })
 
-// router.get('/:id', (req, res) => {
-// 	Pharmacy.findById(req.params.id, (err, foundPharmacy) => {
-// 	  if (err) {
-// 		console.log(err.message)
-// 	  } else if (foundPharmacy) {
-// 		res.render('show.ejs', {
-// 		  pharmacy: foundPharmacy
-// 		})
-// 	  } else {
-// 		res.status(404).send('Pharmacy not found')
-// 	  }
-// 	})
-//   })
-
-// const mongoose = require('mongoose');
-// const ObjectId = mongoose.Types.ObjectId;
 
 
-// router.get('/:id', (req, res) => {
-//   const id = ObjectId(req.params.id);
-//   Pharmacy.findById(id, (err, foundPharmacy) => {
-
-//   });
-// });
   module.exports = router

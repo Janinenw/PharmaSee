@@ -1,17 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Pharmacy! You did it! index.ejs</h1>
-</body>
-</html> -->
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,11 +6,18 @@
 <body>
 	<h1>Pharmacies List</h1>
 	<ul>
-		<% pharmacys.forEach((pharmacy) => { %>
+		<% pharmacys.forEach(function(pharmacy) { %>
 			<li>
 				<a href="/pharmacy/<%= pharmacy._id %>"><%= pharmacy.name %></a>
+				<form action="/pharmacy/<%= pharmacy._id %>/edit" method="GET" style="display:inline">
+					<button type="submit">Edit</button>
+				</form>
+				<form action="/pharmacy/<%= pharmacy._id %>?_method=DELETE" method="POST" style="display:inline">
+					<button type="submit">Delete</button>
+				</form>
 			</li>
 		<% }); %>
 	</ul>
+	<a href="/pharmacy/new">Create New Pharmacy</a> 
 </body>
 </html>
