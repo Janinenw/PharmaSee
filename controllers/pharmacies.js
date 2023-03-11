@@ -85,41 +85,47 @@ router.delete('/:id', (req, res) => {
 
 //update
 
+// router.put('/:id', (req, res) => {
+// 	Pharmacy.findByIdAndUpdate(req.params.id, req.body.pharmacy, (err, updatedPharmacy) => {
+// 	  if (err) {
+// 		console.log(err);
+// 		res.redirect('/pharmacy');
+// 	  } else {
+// 		res.redirect('/pharmacy/' + req.params.id);
+// 	  }
+// 	});
+//   });
+
 router.put('/:id', (req, res) => {
-	Pharmacy.findByIdAndUpdate(req.params.id, req.body.pharmacy, (err, updatedPharmacy) => {
-	  if (err) {
-		console.log(err);
-		res.redirect('/pharmacy');
-	  } else {
-		res.redirect('/pharmacy/' + req.params.id);
-	  }
-	});
-  });
-  
+	if (req.body.inStock === 'on') {
+	
+		req.body.inStock = true;
+	} else {
+		
+		req.body.inStock = false;
+	}
+	
+	Pharmacy.findByIdAndUpdate(req.params.id, req.body, { new: true,}, 
+		(err, updatedPharmacy) => {
+	
+			if(err) {
+				console.log(err)
+			
+			} else {
+				console.log("updated pharmacy")
+			
+				res.redirect('/pharmacy')
+			}
+	
+		})
+	})
+	
 
   //create 
 
 
 
-// router.post('/', (req, res) => {
-// 	const { name, address, phone } = req.body;
-// 	const newPharmacy = new Pharmacy({
-// 	  name,
-// 	  address,
-// 	  phone
-// 	});
-  
-// 	// Save the new pharmacy to the database
-// 	newPharmacy.save((err, savedPharmacy) => {
-// 	  if (err) {
-// 		console.log(err.message);
-// 		res.redirect('/pharmacy/new');
-// 	  } else {
-// 		console.log(savedPharmacy);
-// 		res.redirect('/pharmacy');
-// 	  }
-// 	});
-//   });
+
 router.post('/', (req, res) => {
 	if (req.body.inStock === 'on') {
 	
