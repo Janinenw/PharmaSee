@@ -1,6 +1,5 @@
 
 const express = require('express')
-// const { findOneAndUpdate } = require('../models/pharmacies.js')
 const router = express.Router()
 const Pharmacy = require('../models/pharmacies.js')
 // const mongoose = require('mongoose');
@@ -24,48 +23,48 @@ router.get('/', (req, res) => {
 
   // new
 router.get('/new', (req, res) => {
-	console.log("New pharmacy route hit!")
+	console.log("New pharmacy page hit")
     res.render("new.ejs")
 })
 
 
 
 
-// router.get('/seed', (req, res) => {
-//     Pharmacy.create([
-//         {
-//             name: 'Rite Aid',
-//             town: 'Fairfield',
-//             address: '1619 Post Road',
-//             phoneNumber: '(203) 259-2353',
-//             dateUpdated: '2023-03-07',
-//             inStock: true
-//         },
-//         {
-//             name: 'Walgreens',
-//             town: 'Westport',
-//             address: '880 Post Road East',
-//             phoneNumber: '(203) 226-8452',
-//             dateUpdated: '2023-03-03',
-//             inStock: false
-//         },
-//         {
-//             name: 'CVS',
-//             town: 'Fairfield',
-//             address: '700 Post Road',
-//             phoneNumber: '(203) 255-1089',
-//             dateUpdated: '2023-03-03',
-//             inStock: false
-//         }
-//     ], (err, createdPharmacies) => {
-//         if (err) {
-//             console.log(err.message);
-//         } else {
-//             console.log("data seeded");
-//             res.redirect("/pharmacy");
-//         }
-//     });
-// });
+router.get('/seed', (req, res) => {
+    Pharmacy.create([
+        {
+            name: 'Rite Aid',
+            town: 'Fairfield',
+            address: '1619 Post Road',
+            phoneNumber: '(203) 259-2353',
+            dateUpdated: '2023-03-07',
+            inStock: true
+        },
+        {
+            name: 'Walgreens',
+            town: 'Westport',
+            address: '880 Post Road East',
+            phoneNumber: '(203) 226-8452',
+            dateUpdated: '2023-03-03',
+            inStock: false
+        },
+        {
+            name: 'CVS',
+            town: 'Fairfield',
+            address: '700 Post Road',
+            phoneNumber: '(203) 255-1089',
+            dateUpdated: '2023-03-03',
+            inStock: false
+        }
+    ], (err, createdPharmacies) => {
+        if (err) {
+            console.log(err.message);
+        } else {
+            console.log("data seeded");
+            res.redirect("/pharmacy");
+        }
+    });
+});
 
 
 
@@ -102,27 +101,50 @@ router.put('/:id', (req, res) => {
 
 
 
+// router.post('/', (req, res) => {
+// 	const { name, address, phone } = req.body;
+// 	const newPharmacy = new Pharmacy({
+// 	  name,
+// 	  address,
+// 	  phone
+// 	});
+  
+// 	// Save the new pharmacy to the database
+// 	newPharmacy.save((err, savedPharmacy) => {
+// 	  if (err) {
+// 		console.log(err.message);
+// 		res.redirect('/pharmacy/new');
+// 	  } else {
+// 		console.log(savedPharmacy);
+// 		res.redirect('/pharmacy');
+// 	  }
+// 	});
+//   });
 router.post('/', (req, res) => {
-	const { name, address, phone } = req.body;
-	const newPharmacy = new Pharmacy({
-	  name,
-	  address,
-	  phone
-	});
+	if (req.body.inStock === 'on') {
+	
+		req.body.inStock = true;
+	} else {
+		
+		req.body.inStock = false;
+	}
+	
+	
+	Pharmacy.create(req.body, (error, createdPharmacy) => {
+		 console.log("created pharmacy")
+			res.redirect('/pharmacy')
+			});
+		  })
+		
+	  ;
+	
+
+
+
+//   });
+
   
-	// Save the new pharmacy to the database
-	newPharmacy.save((err, savedPharmacy) => {
-	  if (err) {
-		console.log(err.message);
-		res.redirect('/pharmacy/new');
-	  } else {
-		console.log(savedPharmacy);
-		res.redirect('/pharmacy');
-	  }
-	});
-  });
-  
-//edit
+//edit (form)
 router.get('/:id/edit', (req, res) => {
 	Pharmacy.findById(req.params.id, (err, foundPharmacys) => {
 	  if (err) {
