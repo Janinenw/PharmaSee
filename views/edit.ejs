@@ -5,7 +5,7 @@
 </head>
 <body>
 	<h1>Edit Pharmacy</h1>
-	<form action="/pharmacy/<%= pharmacy._id %>?_method=PUT" method="POST">
+	<form action="/pharmacy/<%= pharmacy._id %>?_method=PUT" method="POST" onsubmit="return validateForm()">
 		<label for="name">Name:</label>
 		<input type="text" id="name" name="name" value="<%= pharmacy.name %>"><br><br>
 		<label for="address">Address:</label>
@@ -34,6 +34,21 @@
 			document.getElementById('dateUpdatedMonth').value = month;
 			document.getElementById('dateUpdatedDay').value = day;
 			document.getElementById('dateUpdatedYear').value = year;
+		}
+		
+		function CheckForm() {
+			const name = document.getElementById('name').value.trim();
+			const address = document.getElementById('address').value.trim();
+			const town = document.getElementById('town').value.trim();
+			const phoneNumber = document.getElementById('phoneNumber').value.trim();
+			const dateUpdatedMonth = document.getElementById('dateUpdatedMonth').value.trim();
+			const dateUpdatedDay = document.getElementById('dateUpdatedDay').value.trim();
+			const dateUpdatedYear = document.getElementById('dateUpdatedYear').value.trim();
+			
+			if (name === '' || address === '' || town === '' || phoneNumber === '' || dateUpdatedMonth === '' || dateUpdatedDay === '' || dateUpdatedYear === '') {
+				return confirm('Please make sure all fields are filled out before updating. If you do not have the necessary information, you can write "N/A"  Press the okay button to continue');
+			}
+			return true;
 		}
 	</script>
 </body>
