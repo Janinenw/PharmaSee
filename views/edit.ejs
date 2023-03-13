@@ -16,8 +16,25 @@
 		<input type="text" id="phoneNumber" name="phoneNumber" value="<%= pharmacy.phoneNumber %>"><br><br>
 		<label for="inStock">In Stock:</label>
 		<input type="checkbox" id="inStock" name="inStock" <% if(pharmacy.inStock) { %> checked <% } %>><br><br>
+		<label for="dateUpdatedMonth">Date Updated:</label>
+		<input type="text" id="dateUpdatedMonth" name="dateUpdatedMonth" placeholder="MM" value="<%= pharmacy.dateUpdatedMonth %>"> /
+		<input type="text" id="dateUpdatedDay" name="dateUpdatedDay" placeholder="DD" value="<%= pharmacy.dateUpdatedDay %>"> /
+		<input type="text" id="dateUpdatedYear" name="dateUpdatedYear" placeholder="YYYY" value="<%= pharmacy.dateUpdatedYear %>">
+		<button type="button" onclick="fillInDate()">Use Current Date</button><br><br>
 		<button type="submit">Update</button>
 	</form>
-	<a href="/pharmacy/<%= pharmacy._id %>">Back to Show Page</a>
+	<a href="/pharmacy/<%= pharmacy._id %>">Back to Pharmacy List</a>
+
+	<script>
+		function fillInDate() {
+			const now = new Date();
+			const year = now.getFullYear();
+			const month = String(now.getMonth() + 1).padStart(2, '0');
+			const day = String(now.getDate()).padStart(2, '0');
+			document.getElementById('dateUpdatedMonth').value = month;
+			document.getElementById('dateUpdatedDay').value = day;
+			document.getElementById('dateUpdatedYear').value = year;
+		}
+	</script>
 </body>
 </html>

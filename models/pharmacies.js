@@ -7,8 +7,11 @@ const pharmacySchema = new mongoose.Schema({
     phoneNumber:{type: String, required: true},
     dateUpdated: { type: String, required: false },
 	inStock: Boolean,
-});
+}, { timestamps: true });
+
+
 
 const Pharmacy = mongoose.model('Pharmacy', pharmacySchema);
 
 module.exports = Pharmacy;
+
