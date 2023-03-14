@@ -9,6 +9,18 @@
 		<% pharmacys.forEach(function(pharmacy) { %>
 			<li>
 				<a href="/pharmacy/<%= pharmacy._id %>"><%= pharmacy.name %></a>
+				<% if (pharmacy.dateUpdated) { %>
+					<span>Updated on <%= pharmacy.dateUpdated %></span>
+				<% } %>
+				<% if (pharmacy.town) { %>
+					<span>Town: <%= pharmacy.town %></span>
+				<% } %>
+				<% if (pharmacy.inStock) { %>
+					<span>In Stock</span>
+				<% } else { %>
+					<span>Out of Stock</span>
+				<% } %>
+			
 				<form action="/pharmacy/<%= pharmacy._id %>/edit" method="GET" style="display:inline">
 					<button type="submit">Edit</button>
 				</form>
@@ -40,3 +52,6 @@
 	</script>
 </body>
 </html>
+
+
+

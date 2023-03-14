@@ -7,13 +7,27 @@ const seedData = require('../models/seed.js')
 
 
 //Index
-router.get('/', (req, res) => {
-	console.log("index!");
+// router.get('/', (req, res) => {
+// 	console.log("index!");
   
+// 	Pharmacy.find({}, (err, foundPharmacys) => {
+// 	  if (err) {
+// 		console.log(err.message);
+// 	  } else {
+// 		console.log(foundPharmacys);
+// 		res.render('index.ejs', {
+// 		  pharmacys: foundPharmacys
+// 		});
+// 	  }
+// 	});
+//   });
+
+router.get('/', (req, res) => {
 	Pharmacy.find({}, (err, foundPharmacys) => {
 	  if (err) {
 		console.log(err.message);
 	  } else {
+		foundPharmacys.sort((a, b) => (a.town > b.town) ? 1 : -1);
 		console.log(foundPharmacys);
 		res.render('index.ejs', {
 		  pharmacys: foundPharmacys
