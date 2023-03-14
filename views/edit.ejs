@@ -19,8 +19,10 @@
 		<input type="text" id="phoneNumber" name="phoneNumber" value="<%= pharmacy.phoneNumber %>"><br><br>
 	  
 		<label for="dateUpdated">Date Updated:</label>
-		<input type="text" id="dateUpdated" name="dateUpdated" value="<%= pharmacy.dateUpdated %>" placeholder="MM/DD/YYYY"><br><br>
-	  
+		<input type="text" id="dateUpdated" name="dateUpdated" value="<%= pharmacy.dateUpdated %>" placeholder="MM/DD/YYYY"><br>
+
+		<button type="button" onclick="setToday()">Set Today's Date</button><br><br>
+		
 		<label for="inStock">In Stock:</label>
 		<input type="checkbox" id="inStock" name="inStock" <% if(pharmacy.inStock) { %> checked <% } %>><br><br>
 	  
@@ -28,6 +30,15 @@
 
 	</form>
 	<a href="/pharmacy/<%= pharmacy._id %>">Back to Pharmacy List</a>
-
+<script>
+ const setToday = () => {
+  const today = new Date();
+  const dd = String(today.getDate()).padStart(2, '0');
+  const mm = String(today.getMonth() + 1).padStart(2, '0');
+  const yyyy = today.getFullYear();
+  const dateString = mm + '/' + dd + '/' + yyyy;
+  document.getElementById('dateUpdated').value = dateString;
+}
+</script>
 </body>
 </html>

@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h1>New Pharmacy</h1>
-	<form action="/pharmacy" method="POST" onsubmit="return checkForm()">
+	<form action="/pharmacy" method="POST">
 		<label for="name">Name:</label>
 		<input type="text" id="name" name="name"><br><br>
 		<label for="address">Address:</label>
@@ -19,40 +19,24 @@
 		<input type="text" id="phoneNumber" name="phoneNumber"><br><br>
 		<label for="inStock">In Stock:</label>
 		<input type="checkbox" id="inStock" name="inStock"><br><br>
-		<label for="dateUpdatedMonth">Date Updated:</label>
-		<input type="text" id="dateUpdatedMonth" name="dateUpdatedMonth" placeholder="MM"> /
-		<input type="text" id="dateUpdatedDay" name="dateUpdatedDay" placeholder="DD"> /
-		<input type="text" id="dateUpdatedYear" name="dateUpdatedYear" placeholder="YYYY">
-		<button type="button" onclick="fillInDate()">Use Current Date</button><br><br>
+		<label for="dateUpdated">Date Updated:</label>
+		<input type="text" id="dateUpdated" name="dateUpdated" value="<%=  %>" placeholder="MM/DD/YYYY"><br>
+		<button type="button" onclick="setToday()">Use Current Date</button><br><br>
 		<button type="submit">Create</button>
 	</form>
 	<a href="/pharmacy">Back to Index Page</a>
 
 	<script>
-		const fillInDate = () => {
-			const now = new Date();
-			const year = now.getFullYear();
-			const month = String(now.getMonth() + 1).padStart(2, '0');
-			const day = String(now.getDate()).padStart(2, '0');
-			document.getElementById('dateUpdatedMonth').value = month;
-			document.getElementById('dateUpdatedDay').value = day;
-			document.getElementById('dateUpdatedYear').value = year;
-		}
+	
+  const setToday = () => {
+  const today = new Date();
+  const dd = String(today.getDate()).padStart(2, '0');
+  const mm = String(today.getMonth() + 1).padStart(2, '0');
+  const yyyy = today.getFullYear();
+  const dateString = mm + '/' + dd + '/' + yyyy;
+  document.getElementById('dateUpdated').value = dateString;
+}
 		
-		const checkForm = () => {
-			const name = document.getElementById('name').value.trim();
-			const address = document.getElementById('address').value.trim();
-			const town = document.getElementById('town').value.trim();
-			const phoneNumber = document.getElementById('phoneNumber').value.trim();
-			const dateUpdatedMonth = document.getElementById('dateUpdatedMonth').value.trim();
-			const dateUpdatedDay = document.getElementById('dateUpdatedDay').value.trim();
-			const dateUpdatedYear = document.getElementById('dateUpdatedYear').value.trim();
-			
-			if (name === '' || address === '' || town === '' || phoneNumber === '' || dateUpdatedMonth === '' || dateUpdatedDay === '' || dateUpdatedYear === '') {
-				return confirm('Please make sure all fields are filled out before creating. If you do not have the necessary information, you can write "N/A". Press the okay button to continue.');
-			}
-			return true;
-		}
 	</script>
 </body>
 </html>
