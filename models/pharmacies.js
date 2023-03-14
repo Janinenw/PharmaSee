@@ -5,7 +5,7 @@ const pharmacySchema = new mongoose.Schema({
 	address: { type: String, required: true },
 	town: { type: String, required: true },
     phoneNumber:{type: String, required: true},
-    dateUpdated: { type: String, required: false },
+    dateUpdated: { type: String, required: true },
 	inStock: Boolean,
 }, { timestamps: true });
 
@@ -14,4 +14,3 @@ const pharmacySchema = new mongoose.Schema({
 const Pharmacy = mongoose.model('Pharmacy', pharmacySchema);
 
 module.exports = Pharmacy;
-
