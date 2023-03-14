@@ -58,18 +58,6 @@ router.delete('/:id', (req, res) => {
 })
 
 
-//update
-
-// router.put('/:id', (req, res) => {
-// 	Pharmacy.findByIdAndUpdate(req.params.id, req.body.pharmacy, (err, updatedPharmacy) => {
-// 	  if (err) {
-// 		console.log(err);
-// 		res.redirect('/pharmacy');
-// 	  } else {
-// 		res.redirect('/pharmacy/' + req.params.id);
-// 	  }
-// 	});
-//   });
 
 router.put('/:id', (req, res) => {
 	if (req.body.inStock === 'on') {
