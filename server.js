@@ -8,17 +8,20 @@ const mongoose = require('mongoose');
 // const methodOverride = require("method-override")
 const pharmacyController = require ('./controllers/pharmacies.js')
 
+const db = mongoose.connection
 
-
+const MONGODB_URI = process.env.MONGODB_URI;
 
 // Database Connection
-mongoose.connect(process.env.MONGODB_URL);
+mongoose.connect(process.env.MONGODB_URI);
 
 
+mongoose.connect(MONGODB_URI , { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }
+    );
+    
 
 
-
-const db = mongoose.connection
+// const db = mongoose.connection
 
 db.on('error', (err) => console.log(err.message + ' is mongo not running?'));
 db.on('connected', () => console.log('mongo connected'));
