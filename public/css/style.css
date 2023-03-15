@@ -1,0 +1,75 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 30px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 30px;
+}
+
+li {
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+span {
+  margin-left: 10px;
+}
+
+a[href='/pharmacy/new'] {
+  display: block;
+  margin: 30px;
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+a[href='/pharmacy/new']:hover {
+  background-color: #555;
+}
+
+
+li > * {
+  flex-basis: calc(33.33% - 10px);
+}
+
+li > form {
+  margin-left: auto;
+}
