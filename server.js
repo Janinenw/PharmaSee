@@ -6,7 +6,7 @@ const methodOverride = require("method-override")
 const express = require("express")
 const app = express()
 const mongoose = require('mongoose');
-// const methodOverride = require("method-override")
+
 const pharmacyController = require ('./controllers/pharmacies.js')
 
 // Database Connection
@@ -18,8 +18,6 @@ mongoose.connect(MONGODB_URI,{
 
 
 
-// Database Connection
-// mongoose.connect(process.env.MONGODB_URI);
 
 
 
@@ -36,7 +34,9 @@ app.use(methodOverride("_method"))
 app.use('/pharmacy', pharmacyController)
 app.use(express.static('public'));
 
-
+app.get("/", (req,res)=>{
+    res.render("homepage.ejs")
+  })
 
 
 app.listen (PORT,() => console.log (`Server is listening on port: ${PORT}`));
