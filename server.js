@@ -6,8 +6,8 @@ const methodOverride = require("method-override")
 const express = require("express")
 const app = express()
 const mongoose = require('mongoose');
-
 const pharmacyController = require ('./controllers/pharmacies.js')
+const path = require('path')
 
 // Database Connection
 const MONGODB_URI = process.env.MONGODB_URI;
@@ -33,6 +33,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"))
 app.use('/pharmacy', pharmacyController)
 app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')))
 
 app.get("/", (req,res)=>{
     res.render("homepage.ejs")
