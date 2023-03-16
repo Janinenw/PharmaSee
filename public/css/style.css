@@ -1,30 +1,45 @@
 /* homepage */
 
-  img {
-    /* transform: scale(0.5); */
-    transform-origin: center top;
-    display: block;
-    margin: auto;
-    margin-top: 200px;
-  }
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -50px; 
+}
 
+img {
+  max-width: 100%;
+  height: auto;
+}
   #pharmasee-intro {
     margin-top: -200px;
 }
+
+.button-container {
+  text-align: center;
+}
+
 .to-index {
   display: inline-block;
   padding: 10px 25px;
   border: none;
   border-radius: 50px;
-  background-color: #007bff;
+  background-color: #38b6ff;
   color: white;
   font-weight: bold;
   font-size: 1rem;
   cursor: pointer;
   text-decoration: none;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 5px #0000004d;
   transition: transform 0.3s ease-in-out;
 }
+
+.to-index:hover {
+  background-color: #0069d9;
+  transform: scale(1.1);
+}
+
+
 body {
   font-family: Arial, sans-serif;
   background-color: #ffffff;
