@@ -5,29 +5,29 @@
 	<title>Edit Pharmacy</title>
 </head>
  <body>
-	<h1 id="edit-pharmacy"> Edit Pharmacy</h1>
+	<h1 id="edit-pharmacy">Edit Pharmacy</h1>
 	<form action="/pharmacy/<%= pharmacy._id %>?_method=PUT" method="POST" class="pharmacy-input">
-		<label for="name">Name:</label>
-		<input type="text" id="name" name="name" value="<%= pharmacy.name %>"><br><br>
-	  
-		<label for="address">Address:</label>
-		<input type="text" id="address" name="address" value="<%= pharmacy.address %>"><br><br>
-	  
-		<label for="town">Town:</label>
-		<input type="text" id="town" name="town" value="<%= pharmacy.town %>"><br><br>
-	  
-		<label for="phoneNumber">Phone Number:</label>
-		<input type="text" id="phoneNumber" name="phoneNumber" value="<%= pharmacy.phoneNumber %>"><br><br>
-	  
-		<label for="dateUpdated">Date Updated:</label>
-		<input type="text" id="dateUpdated" name="dateUpdated" value="<%= pharmacy.dateUpdated %>" placeholder="MM/DD/YYYY"><br>
-
-		<button type="button" onclick="setToday()">Set Today's Date</button><br><br>
-		<label for="inStock">In Stock:</label>
-		<input type="checkbox" id="inStock" name="inStock" <% if(pharmacy.inStock) { %> checked <% } %>><br><br>
-	  
-		<input type="submit" value="Update Pharmacy">
-
+	  <label for="name">Name:</label>
+	  <input type="text" id="name" name="name" value="<%= pharmacy.name %>"><br><br>
+	
+	  <label for="address">Address:</label>
+	  <input type="text" id="address" name="address" value="<%= pharmacy.address %>"><br><br>
+	
+	  <label for="town">Town:</label>
+	  <input type="text" id="town" name="town" value="<%= pharmacy.town %>"><br><br>
+	
+	  <label for="phoneNumber">Phone Number:</label>
+	  <input type="text" id="phoneNumber" name="phoneNumber" value="<%= pharmacy.phoneNumber %>"><br><br>
+	
+	  <label for="dateUpdated">Date Updated:</label>
+	  <input type="text" id="dateUpdated" name="dateUpdated" value="<%= pharmacy.dateUpdated %>" placeholder="MM/DD/YYYY"><br>
+	
+	  <button type="button" onclick="setToday()">Set Today's Date</button><br><br>
+	
+	  <label for="inStock">In Stock:</label>
+	  <input type="checkbox" id="inStock" name="inStock" <% if(pharmacy.inStock) { %> checked <% } %>><br><br>
+	
+	  <input type="submit" value="Update Pharmacy">
 	</form>
 	<a href="/pharmacy/">Back to Pharmacy List</a>
 <script>
