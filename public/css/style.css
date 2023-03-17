@@ -28,9 +28,9 @@ img {
   text-align: none;
     border: 10px solid #38b6ff;
     padding: 20px;
-    margin-left: 700px;
-    margin-right:700px;
-    border-radius:50px;
+    margin-left: 400px;
+    margin-right:400px;
+    border-radius:400px;
 }
 
 .site-description li {
@@ -42,7 +42,7 @@ img {
 
 
 /* 
-button */
+go to index button */
 .button-container {
   text-align: center;
 }
@@ -68,8 +68,36 @@ button */
 }
 
 
-
+#index-header {
+font-family: Arial, sans-serif;
+text-align: center;
+}
  */
+
+ /* add new- button */
+ .button-container {
+  text-align: center;
+}
+
+.to-new {
+  display: inline-block;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 50px;
+  background-color: #38b6ff;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 2px 5px #0000004d;
+  transition: transform 0.3s ease-in-out;
+}
+
+.to-new:hover {
+  background-color: #0069d9;
+  transform: scale(1.1);
+}
 /* //index */
 body {
   font-family: Arial, sans-serif;
