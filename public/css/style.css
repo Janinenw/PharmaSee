@@ -78,6 +78,10 @@ body {
   padding: 0;
   text-align: center;
 }
+
+.pharmacy-list {
+  font-family: Arial,sans-serif;
+}
 .pharmacy-list table {
   border-collapse: separate;
   border-spacing: 0 10px;
@@ -122,22 +126,40 @@ body {
   background-color: #f5b7b1;
 }
 
-/* new */
+/* new  and update form*/
 
-.pharmacy-input  {
+
+.pharmacy-input {
+  font-family: Arial, sans-serif;
+}
+
+ .pharmacy-input label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
 }
 
-.pharmacy-input input[type="text"],
-.pharmacy-input input[type="checkbox"] {
+.pharmacy-input input[type="text"] {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
   margin-bottom: 10px;
+}
+
+.pharmacy-input label[for="inStock"] {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.pharmacy-input input[type="checkbox"] {
+  transform: scale(1.5);
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 5px;
 }
 
 
@@ -156,7 +178,7 @@ body {
   background-color: #0062cc;
 }
 
-
+/* //submit- button */
 .pharmacy-input button[type="submit"] {
   padding: 10px;
   border-radius: 4px;
@@ -173,4 +195,20 @@ body {
 .pharmacy-input {
   max-width: 400px;
   margin: 0 auto;
-} 
+}
+/* 
+edit page */
+
+#edit-pharmacy {
+  font-family: Arial, sans-serif;
+  text-align: center;
+
+}
+/* 
+new */
+
+#new-pharmacy {
+  font-family: Arial, sans-serif;
+  text-align: center;
+
+}

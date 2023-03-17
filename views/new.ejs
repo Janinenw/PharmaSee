@@ -8,7 +8,7 @@
 	<title>New Pharmacy</title>
 </head>
 <body>
-	<h1>New Pharmacy</h1>
+	<h1 id="new-pharmacy"> Add New Pharmacy</h1>
 	<form action="/pharmacy" method="POST" class="pharmacy-input">
 		<label for="name">Name:</label>
 		<input type="text" id="name" name="name"><br><br>
@@ -18,10 +18,10 @@
 		<input type="text" id="town" name="town"><br><br>
 		<label for="phoneNumber">Phone Number:</label>
 		<input type="text" id="phoneNumber" name="phoneNumber"><br><br>
-		<label for="inStock">In Stock:</label>
-		<input type="checkbox" id="inStock" name="inStock"><br><br>
 		<label for="dateUpdated">Date Updated:</label>
 		<input type="text" id="dateUpdated" name="dateUpdated" value="<%=  %>" placeholder="MM/DD/YYYY"><br>
+		<label for="inStock">In Stock:</label>
+		<input type="checkbox" id="inStock" name="inStock"><br><br>
 		<button type="button" onclick="setToday()">Use Current Date</button><br><br>
 		<button type="submit">Create</button>
 	</form>
