@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h1>Edit Pharmacy</h1>
-	<form action="/pharmacy/<%= pharmacy._id %>?_method=PUT" method="POST">
+	<form action="/pharmacy/<%= pharmacy._id %>?_method=PUT" method="POST" class="pharmacy-input">
 		<label for="name">Name:</label>
 		<input type="text" id="name" name="name" value="<%= pharmacy.name %>"><br><br>
 	  
