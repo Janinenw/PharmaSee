@@ -107,6 +107,48 @@ body {
   text-align: center;
 }
 
+/* buttons */
+
+#addPharmacy {
+  display: inline-block;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 50px;
+  background-color: #38b6ff;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 2px 5px #0000004d;
+  transition: transform 0.3s ease-in-out;
+}
+
+#addPharmacy:hover {
+  background-color: #0069d9;
+  transform: scale(1.1);
+}
+
+#goToHomepage {
+  display: inline-block;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 50px;
+  background-color: #38b6ff;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 2px 5px #0000004d;
+  transition: transform 0.3s ease-in-out;
+}
+
+#goToHomepage:hover {
+  background-color: #0069d9;
+  transform: scale(1.1);
+}
+
 .pharmacy-list {
   font-family: Arial,sans-serif;
 }
@@ -239,4 +281,46 @@ new */
   font-family: Arial, sans-serif;
   text-align: center;
 
+}
+/* show page */
+
+.pharmacy-show {
+  font-family: Arial, sans-serif;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.pharmacy-show h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.pharmacy-show ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pharmacy-show li {
+  margin-bottom: 10px;
+}
+
+.pharmacy-show li strong {
+  font-weight: bold;
+}
+
+.pharmacy-show a {
+  display: inline-block;
+  margin-top: 20px;
+  color: #007bff;
+  font-weight: bold;
+  text-decoration: none;
+  border: 1px solid #007bff;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+.pharmacy-show a:hover {
+  background-color: #007bff;
+  color: #fff;
 }

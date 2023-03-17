@@ -5,6 +5,7 @@
 	<title><%= pharmacy.name %></title>
 </head>
 <body>
+	<div class="pharmacy-show">
 	<h1><%= pharmacy.name %></h1>
 	<ul>
 		<li><strong>Address:</strong> <%= pharmacy.address %></li>
@@ -14,5 +15,6 @@
 		<li><strong>Last Updated:</strong> <%= pharmacy.dateUpdated || 'N/A' %></li>
 	</ul>
 	<a href="/pharmacy">Back to List</a>
+	</div>
 </body>
 </html>
