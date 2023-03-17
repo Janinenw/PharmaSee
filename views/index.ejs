@@ -6,48 +6,45 @@
 </head>
 
 <body class="homepage">
-	<h1 id="pharmasee-header">Welcome to Pharmasee</h1>
-	<!-- <h2 id="pharmasee-purpose">Purpose of Pharmasee: find which pharmacies near you have Adderall in stock.</h2>
+	<h1>Pharmacy List</h1>
 	<div class="pharmacy-list">
-		<ul>
-		  <li>Look through pharmacies organized by town</li>
-		  <li>See Adderall stock status</li>
-		  <li>Click on a pharmacy to see its address and phone number</li>
-		  <li>Add a pharmacy to the list</li>
-		  <li>Update a pharmacy's stock status</li>
-		</ul> -->
-	  </div>
-	<h2>Pharmacy List</h2>
-	<div class="scrollable">
-		<div class = "pharmacy-list"></div>
-		<ul>
-			<% pharmacys.forEach(function(pharmacy) { %>
-				<li>
-					<a href="/pharmacy/<%= pharmacy._id %>"><%= pharmacy.name %></a>
-					<% if (pharmacy.dateUpdated) { %>
-						<span>Updated on <%= pharmacy.dateUpdated %></span>
-					<% } %>
-					<% if (pharmacy.town) { %>
-						<span>Town: <%= pharmacy.town %></span>
-					<% } %>
-					<% if (pharmacy.inStock) { %>
-						<span>In Stock</span>
-					<% } else { %>
-						<span>Out of Stock</span>
-					<% } %>
-				
-					<form action="/pharmacy/<%= pharmacy._id %>/edit" method="GET" style="display:inline">
-						<button type="submit">Edit</button>
-					</form>
-					<form action="/pharmacy/<%= pharmacy._id %>?_method=DELETE" method="POST" style="display:inline" onsubmit="return checkDelete()">
-						<button type="submit">Delete</button>
-					</form>
-				</li>
-			<% }); %>
-		</ul>
+		<table>
+			<thead>
+				<tr>
+					<th>Pharmacy Name</th>
+					<th>Date Updated</th>
+					<th>Town</th>
+					<th>Stock Status</th>
+					<th>Edit</th>
+					<th>Delete</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% pharmacys.forEach(function(pharmacy) { %>
+					<tr>
+						<td><a href="/pharmacy/<%= pharmacy._id %>"><%= pharmacy.name %></a></td>
+						<td><%= pharmacy.dateUpdated || "" %></td>
+						<td><%= pharmacy.town || "" %></td>
+						<td class="<%= pharmacy.inStock ? 'in-stock' : 'out-of-stock' %>"><%= pharmacy.inStock ? 'In Stock' : 'Out of Stock' %></td>
+						<td>
+							<form action="/pharmacy/<%= pharmacy._id %>/edit" method="GET">
+								<button type="submit">Edit</button>
+							</form>
+						</td>
+						<td>
+							<form action="/pharmacy/<%= pharmacy._id %>?_method=DELETE" method="POST" onsubmit="return checkDelete()">
+								<button type="submit">Delete</button>
+							</form>
+						</td>
+					</tr>
+				<% }); %>
+			</tbody>
+		</table>
 	</div>
-
+	<a href="/">Go back to homepage</a>
 	<a href="/pharmacy/new">Create New Pharmacy</a> 
+
+	
 
 	<script>
 		const deletePrompt = () => {

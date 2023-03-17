@@ -2,7 +2,8 @@
 
 PharmaSee is a full CRUD application that uses the MongoDB, Express, EJS, CSS, and Node.js. The purpose of this app is to streamline the process of locating pharmacies that have Adderall, given that there is a national shortage of it.  PharmaSee relies on user contributions for updates and edits.
 
-User Stories- users can:
+##  User Stories- Users Can:
+
 -Look through pharmacies organized by town
 -See Adderall stock status
 -Click on a pharmacy to see its address and phone number
@@ -10,8 +11,9 @@ User Stories- users can:
 -Update a pharmacy's stock status
 -Delete a pharmacy in the instance of duplicates, or other errors
 
+##  Wireframes:
 
-Wireframes:
+
 
 Models: pharmacies.js
 Schema:
@@ -42,5 +44,7 @@ PUT/pharmacy/:id- updates based on form submitted through edit route
 
 DELETE/pharmacy/:id (probably will only need to be used in cases of duplicates)- deletes existing pharmacy
 
+<img width="648" alt="PharmaSee-wireframe" src="https://media.git.generalassemb.ly/user/46358/files/1dcedaa2-9256-4fc1-99b5-6d8eccb4fa89">
 
-Heroku Link: https://git.heroku.com/pharmasee.git/pharmacy
+
+##  Heroku Link: https://git.heroku.com/pharmasee.git/pharmacy

@@ -66,26 +66,9 @@ button */
   background-color: #0069d9;
   transform: scale(1.1);
 }
-/* 
-index */
- 
- /* body {
-  font-family: Arial, sans-serif;
-  background-color: #ffffff;
-  margin: 0;
-  padding: 0;
-}
 
 
-
- h1 {
-  text-align: center;
-  margin-top: 30px;
-} 
-
-
-
-ul {
+/* ul {
   list-style: none;
   padding: 0;
   margin: 30px;
@@ -102,236 +85,56 @@ li {
   align-items: center;
 }
 
-a {
-  text-decoration: none;
-  color: #333;
-}
 
- div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-} 
-
-button {
-  background-color: #333;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  padding: 5px 10px;
-  cursor: pointer;
-  margin-left: 10px;
-}
-
-button:hover {
-  background-color: #555;
-}
-
-span {
-  margin-left: 10px;
-} 
-
-a[href='/pharmacy/new'] {
-  display: block;
-  margin: 30px;
-  text-align: center;
-  padding: 10px;
-  background-color: #333;
-  color: #fff;
-  border-radius: 3px;
-  text-decoration: none;
-}
-
-a[href='/pharmacy/new']:hover {
-  background-color: #555;
-}
-
-
-li > * {
-  flex-basis: calc(33.33% - 10px);
-}
-
-li > form {
-  margin-left: auto;
-} */ */ */
-
-
-/* /* body {
+ */
+/* //index */
+body {
   font-family: Arial, sans-serif;
-  margin: 0;
-}
-
-h1 {
-  text-align: center;
-  margin: 1em 0;
-}
-
-h2 {
-  font-size: 1.2em;
-  margin: 1em 0;
-}
-
-Style the pharmacy list
-.pharmacy-list ul {
-  list-style: none;
+  background-color: #f5f5f5;
   margin: 0;
   padding: 0;
-}
-
-.pharmacy-list li {
-  margin: 1em 0;
-  padding: 0.5em;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.pharmacy-list a {
-  text-decoration: none;
-  color: #0070c0;
-  font-weight: bold;
-}
-
-.pharmacy-list span {
-  margin: 0 1em;
-}
-
-.pharmacy-list form {
-  display: inline;
-  margin-left: 1em;
-}
-/* 
-.pharmacy-list button {
-  padding: 0.5em 1em;
-  border: none;
-  border-radius: 5px;
-  background-color: #0070c0;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.pharmacy-list button:hover {
-  background-color: #005da5;
-}
-
-Style the create new pharmacy link */
-/* a[href="/pharmacy/new"] {
-  display: block;
-  margin: 1em 0;
-  padding: 0.5em 1em;
-  border: none;
-  border-radius: 5px;
-  background-color: #0070c0;
-  color: white;
-  font-weight: bold;
   text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-} */
-
-/* a[href="/pharmacy/new"]:hover {
-  background-color: #005da5;
-} */
-/* edit page */
-/* 
-form {
-  margin: 30px;
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 20px;
 }
-
-label {
-  font-weight: bold;
-  display: block;
-  margin-bottom: 10px;
-}
-
-input[type="text"] {
-  padding: 10px;
-  border-radius: 3px;
-  border: 1px solid #ccc;
+.pharmacy-list table {
+  border-collapse: separate;
+  border-spacing: 0 10px;
   width: 100%;
-  margin-bottom: 20px;
+  margin-top: 30px;
 }
 
-input[type="checkbox"] {
-  margin-right: 10px;
+.pharmacy-list th {
+  background-color: #e6f2ff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
 }
 
-button[type="submit"] {
-  background-color: #333;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  padding: 5px 10px;
-  cursor: pointer;
+.pharmacy-list td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
 }
 
-button[type="submit"]:hover {
-  background-color: #555;
+.pharmacy-list tr:nth-child(even) {
+  background-color: #f2f2f2;
 }
 
-button[type="button"] {
-  background-color: #ccc;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  padding: 5px 10px;
-  cursor: pointer;
+.pharmacy-list tr:hover {
+  background-color: #cce6ff;
 }
-
-button[type="button"]:hover {
-  background-color: #aaa;
-}
-
-input[type="submit"], input[type="reset"] {
-  background-color: #333;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-input[type="submit"]:hover, input[type="reset"]:hover {
-  background-color: #555;
-}
-
-button,
-input[type="submit"],
-input[type="reset"] {
-  margin-top: 20px;
-}  */
-
-/* index */
-
-
-.scrollable {
-  max-height: 400px;
-  overflow-y: scroll;
+.pharmacy-list td {
   border: 1px solid #ddd;
   padding: 10px;
 }
 
-/* Style the list items */
-ul li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
+
+
+
+
+.pharmacy-list td.in-stock {
+  background-color: #c2e0c6;
 }
 
-/* Style the pharmacy name */
-a {
-  font-size: 20px;
-  color: #333;
-  text-decoration: none;
+.pharmacy-list td.out-of-stock {
+  background-color: #f5b7b1;
 }
-
-a:hover {
-  text-decoration: underline;
-}
-
