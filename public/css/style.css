@@ -95,7 +95,7 @@ text-align: center;
 }
 
 .to-new:hover {
-  background-color: #0069d9;
+  background-color: #38b6ff;
   transform: scale(1.1);
 }
 /* //index */
@@ -125,7 +125,7 @@ body {
 }
 
 #addPharmacy:hover {
-  background-color: #0069d9;
+  background-color: #87ebfd;
   transform: scale(1.1);
 }
 
@@ -144,8 +144,50 @@ body {
   transition: transform 0.3s ease-in-out;
 }
 
+#deleteBtn {
+  display: inline-block;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 50px;
+  background-color: #d4721d;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 2px 5px #0000004d;
+  transition: transform 0.3s ease-in-out;
+}
+
+#deleteBtn:hover {
+  background-color: #e9ad61;
+  transform: scale(1.1);
+}
+
+
+#editBtn {
+  display: inline-block;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 50px;
+  background-color: #38b6ff;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 2px 5px #0000004d;
+  transition: transform 0.3s ease-in-out;
+}
+
+#editBtn:hover {
+  background-color: #87ebfd;
+  transform: scale(1.1);
+}
+
+
 #goToHomepage:hover {
-  background-color: #0069d9;
+  background-color: #87ebfd;
   transform: scale(1.1);
 }
 
@@ -239,7 +281,7 @@ body {
   padding: 10px;
   border-radius: 4px;
   border: none;
-  background-color: #007bff;
+  background-color: #38b6ff;
   color: white;
   cursor: pointer;
 }
@@ -250,16 +292,22 @@ body {
 
 /* //submit- button */
 .pharmacy-input button[type="submit"] {
-  padding: 10px;
-  border-radius: 4px;
+  display: inline-block;
+  padding: 10px 25px;
   border: none;
-  background-color: #28a745;
+  border-radius: 50px;
+  background-color: #38b6ff;
   color: white;
+  font-weight: bold;
+  font-size: 1rem;
   cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 2px 5px #0000004d;
+  transition: transform 0.3s ease-in-out;
 }
 
 .pharmacy-input button[type="submit"]:hover {
-  background-color: #218838;
+  background-color: #87ebfd;
 }
 
 .pharmacy-input {
@@ -323,4 +371,30 @@ new */
 .pharmacy-show a:hover {
   background-color: #007bff;
   color: #fff;
+}
+
+/* edit */
+
+/* new */
+
+#backBtn {
+  display: inline-block;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 50px;
+  background-color: #d4721d;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 2px 5px #0000004d;
+  transition: transform 0.3s ease-in-out;
+  margin-top: 200px;
+ 
+}
+
+#backBtn:hover {
+  background-color: #e9ad61;
+  transform: scale(1.1);
 }
