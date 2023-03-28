@@ -56,6 +56,5 @@ DELETE/pharmacy/:id (probably will only need to be used in cases of duplicates)-
 * Improved accessibility and responsive design
 
 
-##  Deployed via Heroku: https://git.heroku.com/pharmasee.git/pharmacy
-
+##  Deployed via Heroku: https://pharmasee.herokuapp.com
 

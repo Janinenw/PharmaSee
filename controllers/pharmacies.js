@@ -5,21 +5,6 @@ const Pharmacy = require('../models/pharmacies.js')
 const seedData = require('../models/seed.js')
 
 
-//Index
-// router.get('/', (req, res) => {
-// 	console.log("index!");
-  
-// 	Pharmacy.find({}, (err, foundPharmacys) => {
-// 	  if (err) {
-// 		console.log(err.message);
-// 	  } else {
-// 		console.log(foundPharmacys);
-// 		res.render('index.ejs', {
-// 		  pharmacys: foundPharmacys
-// 		});
-// 	  }
-// 	});
-//   });
 
 router.get('/', (req, res) => {
 	Pharmacy.find({}, (err, foundPharmacys) => {

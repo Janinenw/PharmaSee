@@ -9,7 +9,6 @@ const mongoose = require('mongoose');
 const pharmacyController = require ('./controllers/pharmacies.js')
 const path = require('path')
 
-// Database Connection
 const MONGODB_URI = process.env.MONGODB_URI;
 mongoose.set("strictQuery", true) 
 mongoose.connect(MONGODB_URI,{
